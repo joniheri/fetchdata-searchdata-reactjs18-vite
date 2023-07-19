@@ -71,7 +71,7 @@ export default function App() {
           overflowY: "scroll",
         }}
       >
-        {searchDataRandom.map((item, index) => {
+        {searchDataRandom.sort().map((item, index) => {
           return (
             <div
               key={index}
@@ -119,7 +119,7 @@ export default function App() {
           overflowY: "scroll",
         }}
       >
-        {favoriteWord.map((item, index) => {
+        {favoriteWord.sort().map((item, index) => {
           return (
             <div
               key={index}
