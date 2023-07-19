@@ -32,8 +32,9 @@ export default function App() {
 
   const hanldeAddWordToFavorite = (word) => {
     // console.log(word);
-    const newFavoriteWord = favoriteWord.concat(word);
-    setFavoriteWord(newFavoriteWord);
+    if (!favoriteWord.includes(word)) {
+      setFavoriteWord(favoriteWord.concat(word));
+    }
   };
 
   const hanldeReduceWordFromFavorite = (word) => {
@@ -92,6 +93,7 @@ export default function App() {
                   width: "110px",
                   border: "1px solid silver",
                   borderRadius: "5px",
+                  cursor: "pointer",
                 }}
                 onClick={() => {
                   hanldeAddWordToFavorite(item);
@@ -110,7 +112,7 @@ export default function App() {
       <div
         style={{
           width: "100%",
-          height: "250px",
+          height: "200px",
           border: "1px solid silver",
           borderRadius: "7px",
           marginTop: "40px",
@@ -139,6 +141,7 @@ export default function App() {
                   borderRadius: "5px",
                   color: "white",
                   width: "100px",
+                  cursor: "pointer",
                 }}
                 onClick={() => {
                   hanldeReduceWordFromFavorite(item);
@@ -151,7 +154,7 @@ export default function App() {
         })}
       </div>
       <p style={{ fontSize: "15px", fontWeight: "20" }}>
-        data : {favoriteWord.length}
+        Data : {favoriteWord.length}
       </p>
     </div>
   );
